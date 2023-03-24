@@ -1,0 +1,40 @@
+<h1>
+  File Upload
+</h1>
+
+<label>Select a File (&lt; 1MB)</label>
+<br/>
+<input type="file" (change)="onFileChange($event)" multiple="single"
+accept=".csv"/>
+<br/>
+<button (click)="uploadFile()" [disabled]="!theFile">
+  Upload File
+</button>
+<br/>
+<br/>
+
+<!-- ** BEGIN: csv file content in text format ** -->
+<!-- <div *ngIf="rawDataAsText">
+  <span>
+    {{rawDataAsText}}
+  </span>
+</div> -->
+<!-- ** END: INFORMATION MESSAGE AREA ** -->
+
+<!-- ** BEGIN: csv file content in base64 format ** -->
+<div *ngIf="rawDataAsBase64">
+  <span>
+    {{rawDataAsBase64}}
+  </span>
+</div>
+<!-- ** END: INFORMATION MESSAGE AREA ** -->
+
+
+<!-- ** BEGIN: INFORMATION MESSAGE AREA ** -->
+<!-- <div *ngIf="messages.length > 0">
+  <span *ngFor="let msg of messages">
+    {{msg}}
+    <br />
+  </span>
+</div> -->
+<!-- ** END: INFORMATION MESSAGE AREA ** -->
